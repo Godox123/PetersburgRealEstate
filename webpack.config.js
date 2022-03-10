@@ -12,14 +12,14 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const publicPath = () => {
-  return isProd ? "/assets/" : "";
+  return isProd ? "" : "";
 };
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: "/main.js",
   output: {
-    path: path.resolve(__dirname, "../../assets/"),
+    path: path.resolve(__dirname, "assets"),
     filename: `js/${filename("js")}`,
     publicPath: publicPath(),
   },
